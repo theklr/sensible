@@ -1,0 +1,85 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+main {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "locations search"
+    "results results";
+}
+.locations {
+  grid-area: locations;
+}
+.search {
+  grid-area: search;
+}
+.search button {
+  margin-inline: 4px;
+  padding-inline: -2px;
+}
+.results {
+  grid-area: results;
+}
+ul > li {
+  list-style: none;
+}
+li {
+  margin-bottom: 8px;
+  border-radius: 16px;
+  border: 1px solid gainsboro;
+  padding: 8px;
+}
+
+dl {
+  display: grid;
+  grid: repeat(2, 1fr) / 0.5fr repeat(2, 1fr);
+  gap: 2px 6px;
+}
+dt {
+  font-weight: bold;
+}
+dt,
+dd {
+  padding-inline: 4px;
+}
+dd {
+  margin-inline-start: 4px;
+}
+dt.name {
+  width: fit-content;
+  grid-column: 1/2;
+  grid-row: 1;
+}
+dd.name {
+  grid-column: 2/3;
+  grid-row: 1;
+  justify-self: end;
+}
+dt.address {
+  grid-column: 1/2;
+  grid-row: 2;
+  width: fit-content;
+}
+dd.address {
+  grid-column: 2/3;
+  grid-row: 2;
+  justify-self: end;
+  text-align: right;
+}
+dt.rating {
+  grid-column: 3/4;
+  grid-row: 1/-1;
+  width: fit-content;
+  height: auto;
+  align-self: center;
+}
+dd.rating {
+  grid-column: 3/4;
+  grid-row: 1/-1;
+  align-self: center;
+  justify-self: end;
+}
